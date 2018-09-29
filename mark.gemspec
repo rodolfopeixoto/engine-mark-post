@@ -1,16 +1,16 @@
 
-lib = File.expand_path("../lib", __FILE__)
+lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "mark/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "mark"
+  spec.name          = 'mark'
   spec.version       = Mark::VERSION
-  spec.authors       = ["Rodolfo Peixoto"]
-  spec.email         = ["rodolfog.peixoto@gmail.com"]
+  spec.authors       = ['Rodolfo Peixoto']
+  spec.email         = ['rodolfog.peixoto@gmail.com']
 
-  spec.summary       = %q{TODO: Simple static site generator.}
-  spec.description   = %q{TODO: Simple static site generator.}
+  spec.summary       = ['Simple static site generator']
+  spec.description   = ['Simple static site generator']
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
@@ -25,16 +25,17 @@ Gem::Specification.new do |spec|
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
-  spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
+  spec.files = Dir.chdir(File.expand_path('..', __FILE__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
-  spec.bindir        = "exe"
+  spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.require_paths = ['lib']
 
-  spec.add_development_dependency "bundler", "~> 1.16"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "minitest", "~> 5.0"
-  spec.add_dependency 'tilt'
+  spec.add_development_dependency 'bundler', '~> 1.16'
+  spec.add_development_dependency 'minitest', '~> 5.0'
+  spec.add_dependency 'pry'
+  spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_dependency 'redcarpet'
+  spec.add_dependency 'tilt'
 end
